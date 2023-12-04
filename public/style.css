@@ -1,0 +1,13 @@
+html, body{
+    margin: 0;
+    height: 110%;
+}
+body{
+    background-color:#3273dc
+}
+h1{
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.29);
+}
+textarea {
+    resize: none;
+  }

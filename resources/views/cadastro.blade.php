@@ -5,15 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    @include('components.style')
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Cadastro</title>
 </head>
 
 <body>
-    <h1 class="has-text-centered title "> <x-fab-laravel style="height: 20px" /> LaraNotes <x-fab-laravel
-            style="height: 20px" /> </h1>
+    @include('components.logo')
 
 
     <div class="container">

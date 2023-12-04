@@ -11,10 +11,10 @@ use Illuminate\Support\Facades\Redirect;
 class UserController extends Controller
 {
     public function PaginaLogin(){
-        if(Auth::check()) 
-        return redirect('/home');
-        else 
+        if(!Auth::check()) 
         return view('login');
+        else 
+        return redirect('/home');
     }
     public function PaginaCadastro(){
         if(Auth::check())
@@ -52,15 +52,19 @@ class UserController extends Controller
             [
                 'email' => 'required',
                 'password' => 'required'
-            ]
+            ],
+            ['email.required'=> 'Email obrigatório',
+            'password.required' => 'Senha obrigatória']
         );
         if(auth()->attempt(['email'=>$incomingFields['email'],'password' => $incomingFields['password']])){
         $request->session()->regenerate();
         return redirect('/home');}
         else{
-            return Redirect::back()->withErrors([
-                'email' => 'Email ou Senha incorretos!'
-            ]);
+            return Redirect::back()
+            //Retorna mensagem de erro
+            ->withErrors(['email'=>'Email ou senha incorretos!'])
+            //Retorna com o input do usuário
+            ->withInput($request->all());
         }
     }
 }

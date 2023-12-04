@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\NotasController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +21,7 @@ Route::post('/cadastrar', [UserController::class, 'Cadastrar']);
 Route::get('/home', [UserController::class,'Home']);
 Route::post('/sair', [UserController::class, 'Sair']);
 Route::post('/login',[UserController::class,'Login']);
+Route::post('/criar-anotacao',[NotasController::class,'CriarNota']);
 Route::get('/', function () {
     return redirect('/login');
 });
