@@ -12,6 +12,12 @@ class Pasta extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'titulo',
+        'descricao',
+        'id_user'
+    ];
+
 
     public function nota(): HasMany
     {

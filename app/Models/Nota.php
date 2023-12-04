@@ -9,7 +9,13 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Nota extends Model
 {
     use HasFactory;
-    protected $fillable = [];
+
+    protected $fillable = [
+        'titulo',
+        'corpo',
+        'id_pasta',
+        'id_user'
+    ];
 
     public function user():BelongsTo
     {
