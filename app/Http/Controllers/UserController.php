@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Nota;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
@@ -37,8 +38,9 @@ class UserController extends Controller
         return redirect('/home');
     }
     public function Home(){
+        $notasuser = Nota::where('id_user', Auth::user()->id)->get();
         if(Auth::check())
-        return view('home');
+        return view('home', ['notas' => $notasuser]);
         else
         return redirect('login');
 

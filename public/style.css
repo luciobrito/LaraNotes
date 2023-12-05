@@ -1,6 +1,6 @@
 html, body{
     margin: 0;
-    height: 110%;
+    height: 150%;
 }
 body{
     background-color:#3273dc
@@ -10,4 +10,14 @@ h1{
 }
 textarea {
     resize: none;
+    outline: 1px solid #505050;
+  }
+  input{
+    outline: 1px solid #505050;
+  }
+  button{
+    outline: 1px solid #505050;
+  }
+  .box{
+    outline: 1px solid #505050;
   }
