@@ -23,4 +23,16 @@ class NotasController extends Controller
         return Redirect::back();
         
     }
+    public function DeletarNota(Request $request){
+        $input = $request->validate([
+            'notaid' => 'required'
+        ]);
+        $nota = Nota::find($input['notaid'])->first();
+        $deletarNota = $nota->delete();
+        if($deletarNota)
+        return Redirect::back()->withErrors(['sucesso' => 'Nota deletada com sucesso!' ]);
+        else
+        return Redirect::back()->withErrors(['falha' => 'Houve uma falha, a nota não foi deletada.']);
+
+    }
 }

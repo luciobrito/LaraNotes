@@ -21,6 +21,7 @@ Route::post('/cadastrar', [UserController::class, 'Cadastrar']);
 Route::get('/home', [UserController::class,'Home']);
 Route::post('/sair', [UserController::class, 'Sair']);
 Route::post('/login',[UserController::class,'Login']);
+Route::delete('/deletar-nota', [NotasController::class,'DeletarNota']);
 Route::post('/criar-anotacao',[NotasController::class,'CriarNota']);
 Route::get('/', function () {
     return redirect('/login');
